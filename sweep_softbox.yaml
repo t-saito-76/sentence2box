@@ -1,0 +1,33 @@
+program: trainer.py
+method: bayes
+metric:
+  name: valid accuracy
+  goal: maximize
+early_terminate:
+  type: hyperband
+  min_iter: 10
+  eta: 2
+parameters:
+  epochs:
+    distribution: constant
+    value: 120
+  log_batch_size:
+    distribution: int_uniform
+    max: 14
+    min: 9
+  box_embedding_dim:
+    distribution: int_uniform
+    max: 20
+    min: 10
+  learning_rate:
+    distribution: uniform
+    max: 0.02
+    min: 0.001
+  softplus_temp:
+    distribution: uniform
+    max: 10
+    min: 1
+  model:
+    distribution: categorical
+    values:
+      - softbox
