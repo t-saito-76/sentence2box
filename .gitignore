@@ -3,3 +3,4 @@ sweep*
 !sweep_softbox.yaml
 .idea
 checkpoints
+/.venv
